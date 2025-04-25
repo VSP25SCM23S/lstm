@@ -1,0 +1,2 @@
+Bucket name - lstm_bucket_1323
+URL - https://lstm-610711643871.us-central1.run.app
