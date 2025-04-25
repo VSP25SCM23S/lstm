@@ -3,18 +3,13 @@ FROM python:3.7
 ENV PORT 8080
 ENV HOSTDIR 0.0.0.0
 
-EXPOSE 8080
-
-RUN apt-get update -y && \
-    apt-get install -y python3-pip
-
-COPY ./requirements.txt /app/requirements.txt
-
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /app
+COPY . .
 
+EXPOSE 8080
 
-ENTRYPOINT ["python", "app.py"]
+CMD ["python", "app.py"]
